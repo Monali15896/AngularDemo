@@ -1,0 +1,29 @@
+<table class="table table-hover" >
+     <!-- <ng-container *ngIf="(listdata | async).length>0 as data  ">  -->
+    <tr>
+        <td><label>ClientId</label></td>
+        <td><label>Client Name</label></td>
+        <td><label>Project Type</label></td>
+        <td><label>Project Name</label></td>
+        <td><label>StartDate</label></td>
+        <td><label>EndDate</label></td>
+        <td><label>Default Weekly Hours</label></td>
+        <td><label>Project Logo Name</label></td>
+    </tr>
+       
+        
+    <tr *ngFor="let emp of listdata | async">
+        <td (click)="populateForm(emp)">{{emp.clientId}}</td>
+        <td (click)="populateForm(emp)"> {{emp.clientName}}</td>
+        <td (click)="populateForm(emp)">{{emp.projectTypeId}}</td>
+        <td (click)="populateForm(emp)">{{emp.ProjectName}}</td>
+        <td (click)="populateForm(emp)">{{emp.startDate}}</td>
+        <td (click)="populateForm(emp)"> {{emp.endDate}}</td>
+        <td (click)="populateForm(emp)">{{emp.defaultWeeklyHours}}</td>
+        <td (click)="populateForm(emp)">{{emp.projectLogoName}}</td>
+        <td><button (click)="onDeleteForm(emp.projectId)" class="btn btn-sm btn-outline-danger"> X</button></td>
+    </tr>
+    
+    <!-- </ng-container> -->
+</table>
+

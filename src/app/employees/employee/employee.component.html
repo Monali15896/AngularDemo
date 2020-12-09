@@ -1,0 +1,53 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="hidden" name="" name="projectId"  #projectId="ngModel" [(ngModel)]="service.formData.projectId" >
+            <label>ProjectId</label>
+            <input name="projectId" placeholder="1-100" #ClientId="ngModel" [(ngModel)]="service.formData.projectId" class="form-control" required>
+            
+        </div>
+        <div class="form-group col-md-6">
+            <input type="hidden" name="" name="projectId"  #projectId="ngModel" [(ngModel)]="service.formData.projectId" >
+            <label>ClientId</label>
+            <input name="ClientId" placeholder="1-100" #ClientId="ngModel" [(ngModel)]="service.formData.clientId" class="form-control" required>
+            <div class="validation-error" *ngIf="ClientId.invalid && ClientId.touched">This field is Required.</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Client Name</label>
+            <input name="ClientName" placeholder="Example" #ClientName="ngModel" [(ngModel)]="service.formData.clientName" class="form-control" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 ">
+            <label>Project Type</label>
+            <input name="ProjectTypeId" placeholder="Number(1-4)" #ProjectTypeId="ngModel" [(ngModel)]="service.formData.projectTypeId" class="form-control" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Project Name</label>
+            <input name="ProjectName" placeholder="Example" #ProjectName="ngModel" [(ngModel)]="service.formData.projectName" class="form-control" required>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>StartDate</label>
+            <input name="StartDate" placeholder="mm/dd/yyyy" #StartDate="ngModel" [(ngModel)]="service.formData.startDate" class="form-control" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label>EndDate</label>
+            <input name="EndDate" placeholder="mm/dd/yyyy" #EndDate="ngModel" [(ngModel)]="service.formData.endDate" class="form-control" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Default Weekly Hours</label>
+        <input name="DefaultWeeklyHours" placeholder="Number" #DefaultWeeklyHours="ngModel" [(ngModel)]="service.formData.defaultWeeklyHours" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Project Logo Name</label>
+        <input name="ProjectLogoName" placeholder="JPG/.png" #ProjectLogoName="ngModel" [(ngModel)]="service.formData.projectLogoName" class="form-control">
+       
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-ng btn-block">Submit</button>
+    </div>
+</form>
